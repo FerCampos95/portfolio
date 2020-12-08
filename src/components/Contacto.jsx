@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Avatar, makeStyles, Container, Divider, Typography, Hidden, Button, IconButton, Tooltip } from '@material-ui/core'
+import { Grid, Avatar, makeStyles, Container, Divider, Typography, Hidden, Button, Tooltip } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import CallIcon from '@material-ui/icons/Call';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
@@ -8,6 +8,9 @@ import FileCopyIcon from '@material-ui/icons/FileCopy';
 
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+
+import  {useTranslation} from 'react-i18next';
+
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -41,7 +44,9 @@ const useStyles = makeStyles((theme) => ({
 
 export const Contacto = () => {
     const classes = useStyles();
+    const {t} = useTranslation();
     const [open, setOpen] = React.useState(false);
+
 
     const handleClick = () => {
         let aux = document.createElement("input");
@@ -67,7 +72,7 @@ export const Contacto = () => {
                     <Hidden xsDown>
                         <Avatar
                             alt="Foto Perfil"
-                            src="./images/fer-campos.png"
+                            src={window.location.origin+"/images/fer-campos.png"}
                             className={classes.large}
                             variant="rounded"
                         />
@@ -81,11 +86,11 @@ export const Contacto = () => {
                 </Grid>
                 <Grid item sm={6} xs={12} direction="column" alignItems="center">
                     <Typography variant="h3" style={{ paddingLeft: '30px' }}>
-                        Contacto
+                        {t("contact.title")}
                         <Divider className={classes.divider} />
                     </Typography>
                     <Grid container item alignItems="center" className={classes.marginTop}>
-                        <Tooltip title="Llamar">
+                        <Tooltip title={t("contact.call")}>
                             <Link
                                 component={Button}
                                 color="inherit"
@@ -106,7 +111,7 @@ export const Contacto = () => {
                         </Tooltip>
                     </Grid>
                     <Grid container item alignItems="center" className={classes.marginTop}>
-                        <Tooltip title="Enviar Whatsapp">
+                        <Tooltip title={t("contact.whatsapp")}>
                             <Link
                                 component={Button}
                                 color="inherit"
@@ -127,7 +132,7 @@ export const Contacto = () => {
                         </Tooltip>
                     </Grid>
                     <Grid container item alignItems="center" className={classes.marginTop}>
-                        <Tooltip title="Copiar">
+                        <Tooltip title={t("contact.email")}>
                             <Link
                                 component={Button}
                                 color="inherit"
@@ -145,7 +150,7 @@ export const Contacto = () => {
             </Grid>
             <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
                 <Alert icon={<FileCopyIcon fontSize="inherit" />} onClose={handleClose} severity="info">
-                    Email Copiado!
+                    {t("contact.email-copied")}
                 </Alert>
             </Snackbar>
         </Container>

@@ -1,75 +1,116 @@
 import React from 'react'
-import { Grid,Avatar,makeStyles, Container,Divider,Typography} from '@material-ui/core'
+import { Grid, Avatar, makeStyles, Container, Typography } from '@material-ui/core'
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({
     socialLinks: {
         display: 'flex',
+        flexDirection: 'row',
         justifyContent: 'spaceBetween',
-        width: '80%',
+        width: '100%',
         margin: 'auto'
-      },
-      large: {
+    },
+    large: {
         width: theme.spacing(155),
         height: theme.spacing(40),
-      },
-    resumeRightCol : {
-        backgroundImage: 'url(./images/fullstack.jpg)',
+    },
+    resumeRightCol: {
+        // backgroundImage: 'url(./images/fullstack.jpg)',
+        backgroundImage: 'url("../../images/fullstack.jpg")',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         height: theme.spacing(82),
-        
+
         color: 'black',
         padding: '1em',
         marginBottom: '20px',
-        borderRadius: '30px'
-    },
-    icono: {
-        marginTop: theme.spacing(3),
-        width: theme.spacing(20),
-        height: theme.spacing(20),
-    }
+        borderRadius: '30px',
 
-  }));
+        [theme.breakpoints.down('sm')]: {
+            backgroundPosition: 'center',
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            height: theme.spacing(65),
+        },
+    },
+    icono1: {
+        marginTop: theme.spacing(3),
+        width: theme.spacing(18),
+        height: theme.spacing(18),
+    },
+    centrado: {
+        textAlign: 'center',
+    },
+    job: {
+        textAlign: 'center',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "3.6em"
+        },
+    }
+}));
 
 export const Home = () => {
     const classes = useStyles();
+    const { t } = useTranslation();
+
     return (
         <Container className="animate__animated animate__fadeIn">
             <Grid container justify="center" className={classes.resumeRightCol}>
-                <Grid container item xs={12}  justify="center">
-                    <Typography variant="h2">
-                        <b>Desarrollador Full Stack</b>
+                <Grid container item xs={12} justify="center">
+                    <Typography variant="h2" className={classes.job}>
+                        <b>{t('job')}</b>
                     </Typography>
                 </Grid>
                 <Grid container item xs={12} justify="center" alignItems="flex-end">
-                    <Typography variant="h5">
+                    <Typography variant="h5" className={classes.centrado}>
                         <b>HTML/CSS | Bootstrap | Material-ui | JavaScript | React | NodeJS | Express | MongoDB | Azure | Docker</b>
                     </Typography>
                 </Grid>
             </Grid>
 
             <Grid container item className={classes.socialLinks} justify="space-evenly" >
-                    <a href="https://www.linkedin.com/in/fercampos/" rel="noopener noreferrer" target="_blank">
-                        <Avatar 
-                            alt="LinkedIn Icono" 
-                            src="./images/linkedin.png" 
-                            className={classes.icono}
-                            variant="rounded"
-                        />
-                        <Typography variant="h6">/FerCampos</Typography>
-                    </a>
+                <a href="https://www.linkedin.com/in/fercampos/" rel="noopener noreferrer" target="_blank">
+                    <Avatar
+                        alt="LinkedIn Icono"
+                        src={window.location.origin + "/images/linkedin.png"}
+                        className={classes.icono1}
+                        variant="rounded"
+                    />
+                    <Typography variant="h6">/FerCampos</Typography>
+                </a>
 
-                    <a href="https://github.com/fercampos95" rel="noopener noreferrer" target="_blank">
-                        <Avatar 
-                            alt="Github Icono" 
-                            src="./images/github.png" 
-                            className={classes.icono}
-                            variant="rounded"
-                        />
-                        <Typography variant="h6">/FerCampos95</Typography>
-                    </a>
-                </Grid>
-            {/* <CardTecnologias></CardTecnologias> */}
+                <a href="https://github.com/fercampos95" rel="noopener noreferrer" target="_blank">
+                    <Avatar
+                        alt="Github Icono"
+                        src={window.location.origin + "/images/github.png"}
+                        className={classes.icono1}
+                        variant="rounded"
+                    />
+                    <Typography variant="h6">/FerCampos95</Typography>
+                </a>
+            </Grid>
+
+            {/* <Grid container item className={classes.socialLinks} justify="space-evenly" >
+                <a href="https://www.linkedin.com/in/fercampos/" rel="noopener noreferrer" target="_blank">
+                    <Avatar
+                        alt="LinkedIn Icono"
+                        src={window.location.origin + "/images/linkedin.png"}
+                        className={classes.icono}
+                        variant="rounded"
+                    />
+                    <Typography variant="h6">/FerCampos</Typography>
+                </a>
+
+                <a href="https://github.com/fercampos95" rel="noopener noreferrer" target="_blank">
+                    <Avatar
+                        alt="Github Icono"
+                        src={window.location.origin + "/images/github.png"}
+                        className={classes.icono}
+                        variant="rounded"
+                    />
+                    <Typography variant="h6">/FerCampos95</Typography>
+                </a>
+            </Grid> */}
 
         </Container>
     )

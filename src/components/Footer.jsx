@@ -1,15 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import  {useTranslation} from 'react-i18next';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
+      <Link color="inherit" href="https://www.linkedin.com/in/fercampos/">
         Fernando Campos
       </Link>{' '}
       {new Date().getFullYear()}
@@ -28,12 +28,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Footer() {
   const classes = useStyles();
+  const {t} = useTranslation();
   
   return (
     <footer className={classes.footer}>
       <Container maxWidth="lg">
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Desarrollador Full Stack
+          {t('job')}
         </Typography>
         <Copyright />
       </Container>

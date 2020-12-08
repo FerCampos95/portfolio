@@ -2,7 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import CardProyecto from './CardProyecto';
-import { Button, Divider, Grid, Tabs, Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
+import  {useTranslation} from 'react-i18next';
 
 const useStyles = makeStyles((theme) => ({
     // root: {
@@ -32,62 +33,65 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const html = [
-    {
-        titulo: 'Mis Notas',
-        descripcion: 'Mi primera pagina web con HTML-CSS, utiliza LocalStorage para almacenar las Notas en sus Hojas',
-        git: 'https://github.com/nicoAlvarezMern/calendar-app',
-        demo: 'https://nicolas-alvarez-mern-calendar.herokuapp.com/',
-        imagen: './images/proyectos/notas.png'
-    },
-]
 
-const node = [
-    {
-        titulo: 'Chat en Vivo',
-        descripcion: "Chat en vivo creado con Vanilla.js HTML/CSS utilizando la biblioteca Socket.io.",
-        git: 'https://github.com/nicoAlvarezMern/calendar-app',
-        demo: 'https://nicolas-alvarez-mern-calendar.herokuapp.com/',
-        imagen: './images/proyectos/chat.png'
-    },
-    {
-        titulo: 'Juego TuttiFrutti',
-        descripcion: 'El juego del TuttiFrutti en una Sala creado con Node.js HTML/CSS que utiliza la biblioteca Socket.io.',
-        git: 'https://github.com/nicoAlvarezMern/journal-app',
-        demo: 'https://tuttifrutti-fer.herokuapp.com/',
-        imagen: './images/proyectos/tuttifrutti.png'
-    },
-    {
-        titulo: 'Checkout MercadoPago',
-        descripcion: 'Integración del Servicio de CheckoutPro de Mercado Pago para la certificación 2020',
-        git: 'https://github.com/nicoAlvarezMern/journal-app',
-        demo: 'https://nicolas-alvarez-mern-journal-app.netlify.app/',
-        imagen: './images/proyectos/checkout.png'
-
-    },
-]
-
-const react = [
-    {
-        titulo: 'Mis Materias',
-        descripcion: "Una WebApp para cargar las materias y generar las posibles cursadas en la universidad, creada con React y Material-UI.",
-        git: 'https://github.com/nicoAlvarezMern/calendar-app',
-        demo: 'https://nicolas-alvarez-mern-calendar.herokuapp.com/',
-        imagen: './images/proyectos/chat.png'
-    },
-    {
-        titulo: 'Mi Portafolio',
-        descripcion: 'Mi portafolio creado con React y Material-UI con diseño totalmente Responsive e instalable',
-        git: 'https://github.com/nicoAlvarezMern/journal-app',
-        demo: 'https://tuttifrutti-fer.herokuapp.com/',
-        imagen: './images/proyectos/tuttifrutti.png'
-    },
-
-]
 
 export const Proyectos = () => {
     const classes = useStyles();
+    const {t} = useTranslation();
 
+    const html = [
+        {
+            titulo: t('projects.notes'),
+            descripcion: t('projects.notes-desc'),
+            git: 'https://github.com/nicoAlvarezMern/calendar-app',
+            demo: 'https://nicolas-alvarez-mern-calendar.herokuapp.com/',
+            imagen: window.location.origin+'/images/proyectos/notas.png'
+        },
+    ]
+    
+    const node = [
+        {
+            titulo: t('projects.chat'),
+            descripcion: t('projects.chat-desc'),
+            git: 'https://github.com/nicoAlvarezMern/calendar-app',
+            demo: 'https://nicolas-alvarez-mern-calendar.herokuapp.com/',
+            imagen: window.location.origin+'/images/proyectos/chat.png'
+        },
+        {
+            titulo: t('projects.tutti'),
+            descripcion: t('projects.tutti-desc'),
+            git: 'https://github.com/nicoAlvarezMern/journal-app',
+            demo: 'https://tuttifrutti-fer.herokuapp.com/',
+            imagen: window.location.origin+'/images/proyectos/tuttifrutti.png'
+        },
+        {
+            titulo: t('projects.mp'),
+            descripcion: t('projects.mp-desc'),
+            git: 'https://github.com/nicoAlvarezMern/journal-app',
+            demo: 'https://nicolas-alvarez-mern-journal-app.netlify.app/',
+            imagen: window.location.origin+'/images/proyectos/checkout.png'
+    
+        },
+    ]
+    
+    const react = [
+        {
+            titulo: t('projects.subjects'),
+            descripcion: t('projects.subjects-desc'),
+            git: 'https://github.com/nicoAlvarezMern/calendar-app',
+            demo: 'https://nicolas-alvarez-mern-calendar.herokuapp.com/',
+            imagen: window.location.origin+'/images/proyectos/chat.png'
+        },
+        {
+            titulo: t('projects.portfolio'),
+            descripcion: t('projects.portfolio-desc'),
+            git: 'https://github.com/nicoAlvarezMern/journal-app',
+            demo: 'https://tuttifrutti-fer.herokuapp.com/',
+            imagen: window.location.origin+'/images/proyectos/tuttifrutti.png'
+        },
+    
+    ]
+    
     return (
         <Paper elevation={3} className={classes.paper}>
             <Grid container>

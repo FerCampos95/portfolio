@@ -15,9 +15,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import { Button, Grid, Hidden } from '@material-ui/core';
+import { Button, Grid, Hidden, Switch } from '@material-ui/core';
 import { Link } from 'react-router-dom'
 
 import HomeIcon from '@material-ui/icons/Home';
@@ -25,6 +23,9 @@ import AppsIcon from '@material-ui/icons/Apps';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
+import  {useTranslation} from 'react-i18next';
+
+import SwitchIdioma from './SwitchIdioma';
 
 const drawerWidth = 240;
 
@@ -90,9 +91,12 @@ function ListItemLink(props) {
 }
 
 export default function PersistentDrawerLeft() {
+    const {t} = useTranslation();
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
+    let lang= "/"+localStorage.getItem("lang") || "";
+
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -124,7 +128,7 @@ export default function PersistentDrawerLeft() {
 
 
                     <Grid container>
-                        <Link to="/"
+                        <Link to="/inicio"
                             component={Button}
                             color="inherit"
                         >
@@ -139,20 +143,20 @@ export default function PersistentDrawerLeft() {
                                 component={Button}
                                 color="inherit"
                             >
-                                Curriculum
+                                {t('menu.resume')}
                             </Link>
                             <Link to="/proyectos"
                                 component={Button}
                                 color="inherit"
 
                             >
-                                Proyectos
+                                {t('menu.projects')}
                             </Link>
                             <Link to="/contacto"
                                 component={Button}
                                 color="inherit"
                             >
-                                Contacto
+                                {t('menu.contact')}
                             </Link>
                         </Grid>
                     </Hidden>
@@ -175,52 +179,56 @@ export default function PersistentDrawerLeft() {
                 </div>
                 <Divider />
                 <List>
-                    <ListItemLink href="/">
+                    <ListItemLink href={lang+"/inicio"}>
                         <ListItemIcon>
                             <HomeIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            Inicio
+                            {t('menu.home')}
                         </ListItemText>
                     </ListItemLink>
 
-                    <ListItemLink href="/proyectos">
+                    <ListItemLink href={lang+"/proyectos"}>
                         <ListItemIcon>
                             <AppsIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            Proyectos
+                            {t('menu.projects')}
                         </ListItemText>
                     </ListItemLink>
 
-                    <ListItemLink href="/curriculum">
+                    <ListItemLink href={lang+"/curriculum"}>
                         <ListItemIcon>
                             <MenuBookIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            Curriculum
+                            {t('menu.resume')}
                         </ListItemText>
                     </ListItemLink>
 
-                    <ListItemLink href="/sobre-mi">
+                    <ListItemLink href={lang+"/sobre-mi"}>
                         <ListItemIcon>
                             <AccountBoxIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            Sobre Mi
+                            {t('menu.about')}
                         </ListItemText>
                     </ListItemLink>
-                </List>
-                <Divider />
-                <List>
-                    <ListItemLink href="/contacto">
+
+                    <ListItemLink href={lang+"/contacto"}>
                         <ListItemIcon>
                             <ContactMailIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            Contacto
+                            {t('menu.contact')}
                         </ListItemText>
                     </ListItemLink>
+                </List>
+                <Divider />
+                <List >
+                    <ListItem >
+                        <SwitchIdioma/>
+                    </ListItem>
                 </List>
             </Drawer>
             <main

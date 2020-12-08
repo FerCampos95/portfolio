@@ -7,7 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Link } from 'react-router-dom';
+import  {useTranslation} from 'react-i18next';
+
 
 const useStyles = makeStyles({
     root: {
@@ -22,6 +23,7 @@ const useStyles = makeStyles({
 
 export default function ImgMediaCard({ imagen, titulo, descripcion, git, demo }) {
     const classes = useStyles();
+    const {t} = useTranslation();
 
     return (
         <Card className={classes.root}>
@@ -50,7 +52,7 @@ export default function ImgMediaCard({ imagen, titulo, descripcion, git, demo })
                 </a>
                 <a href={demo} target="_blank" style={{textDecoration: 'none'}}>
                     <Button color='primary' variant='contained'>
-                        Visitar
+                        {t('card.demo')}
                     </Button>
                 </a>
             </CardActions>

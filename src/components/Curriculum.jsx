@@ -1,8 +1,9 @@
-import { Grid, Avatar, makeStyles, Container, Divider, Typography, Hidden } from '@material-ui/core'
+import { Grid, Avatar, makeStyles, Divider, Typography } from '@material-ui/core'
 import React from 'react';
 import Tecnologia from './Tecnologia';
-// import { Education } from './Education';
 import Paper from '@material-ui/core/Paper';
+import  {useTranslation} from 'react-i18next';
+
 
 const useStyles = makeStyles((theme) => ({
     foto: {
@@ -10,7 +11,11 @@ const useStyles = makeStyles((theme) => ({
         height: theme.spacing(30),
     },
     marginTop: {
-        marginTop: '10px'
+        marginTop: '10px',
+    },
+    marginTopCenter:{
+        marginTop: '10px',
+        textAlign: "center",        
     },
     gridDerecho: {
         // background: '#27221F',
@@ -45,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const Curriculum = () => {
+    const {t} = useTranslation();
     const classes = useStyles();
     return (
         <Paper className={classes.paper} elevation={5}>
@@ -53,10 +59,10 @@ export const Curriculum = () => {
                     <Grid container item xs={12} justify="center" direction="column" alignItems="center">
                         <Avatar
                             alt="Foto Perfil"
-                            src="./images/fer-campos.png"
+                            src= {window.location.origin+"/images/fer-campos.png"}
                             className={classes.foto}
                         />
-                        <Typography variant="h3">
+                        <Typography variant="h3" className={classes.marginTopCenter}>
                             Fernando Campos
                         </Typography>
                     </Grid>
@@ -67,32 +73,33 @@ export const Curriculum = () => {
                         alignItems="center"
                     >
                         <Divider className={classes.divider} />
-                        <Typography variant="h4" className={classes.marginTop}>
-                            Desarrollador Full Stack
+                        <Typography variant="h4" className={classes.marginTopCenter}>
+                            {t("job")}
                         </Typography>
                         <p>
-                            Soy estudiante de la carrera de Ingeniería en Informática de la UNLaM. Actualmente me encuentro cursando el segundo año de la carrera. Me dedico especialmente al desarrollo web con React y Node.js aunque también tengo conocimientos en otras tecnologías y en el área de infraestructura trabajando con Microsoft Azure.
+                            {t('resume.profile')}
                         </p>
                         <Divider className={classes.divider} />
                         <Typography variant="h6" className={classes.marginTop}>
-                            Localidad
+                            {t('resume.location')}
                         </Typography>
                         <p>González Catán, La Matanza, Bs As, Argentina.</p>
                         <Typography variant="h6" className={classes.marginTop}>
-                            Contacto
+                            {t('resume.contact')}
                         </Typography>
-                        <p><b>Teléfono:</b> +54 11-6707-0753<br></br>
-                            <b>Email:</b> fer_eze_jose@hotmail.com</p>
+                            <p><b>{t('resume.phone')}:</b> +54 11-6707-0753<br></br>
+                            <b>{t('resume.email')}:</b> fer_eze_jose@hotmail.com</p>
                         <Divider className={classes.divider} />
                     </Grid>
                     <Grid container item xs={12}
                         // justify="center"
                         direction="column"
+                        text="center"
                     // alignContent="flex-start"
                     // alignItems="flex-start"
                     >
-                        <Typography variant="h6" className={classes.marginTop}>
-                            Tecnologias
+                        <Typography variant="h6" className={classes.marginTopCenter}>
+                            {t('resume.tecnologies')}
                         </Typography>
                         <Tecnologia nombre={"Javascript"} nivel={94}></Tecnologia>
                         <Tecnologia nombre={"Java"} nivel={75}></Tecnologia>
@@ -112,14 +119,14 @@ export const Curriculum = () => {
                 <Grid item xs={12} sm={8} className={classes.gridDerecho}
                     direction="column"
                 >
-                    <Typography variant="h4" color="initial">Educación</Typography>
+                    <Typography variant="h4" color="initial">{t('resume.education')}</Typography>
                     <Grid container direction="row" alignItems="center" >
                         <Grid sm={4} xs={12}>
-                            <p>01-03-2017 - Actualidad</p>
+                            <p>01-03-2017 - {t('resume.present')}</p>
                         </Grid>
                         <Grid sm={8} xs={12}>
                             <h2 className="fs-2">Universidad Nacional de La Matanza</h2>
-                            <p>Ingeniería en Informática</p>
+                            <p>{t('resume.degree')}</p>
                             <Divider className={classes.dividerCorto} />
                         </Grid>
                         <Grid sm={4} xs={12}>
@@ -127,29 +134,27 @@ export const Curriculum = () => {
                         </Grid>
                         <Grid sm={8} xs={12}>
                             <h2 className="fs-2">Instituto González Catán</h2>
-                            <p>Bachiller en Economía y Administración</p>
+                            <p>{t('resume.secondary')}</p>
                         </Grid>
                     </Grid>
                     <Divider className={classes.divider} />
-                    <Typography variant="h4" color="initial" className={classes.marginTop}>Experiencia Laboral</Typography>
+                    <Typography variant="h4" color="initial" className={classes.marginTop}>{t('resume.work')}</Typography>
                     <Grid container direction="row" alignItems="center" >
                         <Grid sm={4} xs={12}>
-                            <p>01-06-2020 - Actualidad</p>
+                            <p>01-06-2020 - {t('resume.present')}</p>
                         </Grid>
                         <Grid sm={8} xs={12}>
-                            <h2 className="fs-2">Epidata: Desarrollador Full Stack</h2>
-                            <p>Desarrollo web con React, Node, Express, Java</p>
+                            <h2 className="fs-2">{t('resume.epi-dev')}</h2>
+                            <p>{t('resume.epi-dev-desc')}</p>
                             <Divider className={classes.dividerCorto} />
                         </Grid>
                         <Grid sm={4} xs={12}>
                             <p>02-03-2020 - 01-06-2020</p>
                         </Grid>
                         <Grid sm={8} xs={12}>
-                            <h2 className="fs-2">Epidata: Soporte Infraestructura</h2>
+                            <h2 className="fs-2">{t('resume.epi-infra')}</h2>
                             <p className={`fs-1`}>
-                                Mi labor fue liderar la migración de todos los servicios web hospedados en AWS hacia Azure, reduciendo el costo de la compañia en ese sector un 100% durante un año y medio debido a que contaban con un patrocinio de Microsoft que no utilizaban.<br></br>
-                            Migramos los servidores Redmine, CRM, SitioWeb(Wordpress) y Jenkins/SonarQube.<br></br>
-                            Además migramos el sitio web de wordpress del dominio .com al .net en conjunto a email empresarial.
+                                {t('resume.epi-infra-desc')}
                             </p>
                             <Divider className={classes.dividerCorto} />
                         </Grid>
@@ -157,9 +162,9 @@ export const Curriculum = () => {
                             <p>2013 a 2016 y 2019-2020</p>
                         </Grid>
                         <Grid sm={8} xs={12}>
-                            <h2 className="fs-2">Emprendimiento Personal: Centro Educacional El Progreso</h2>
+                            <h2 className="fs-2">{t('resume.el-progreso')}</h2>
                             <p className={`fs-1`}>
-                                Me encargaba de realizar ventas de libros y enciclopedias en colegios, entregar y cobrar el material mensualmente.
+                            {t('resume.el-progreso-desc')}
                             </p>
                             <Divider className={classes.dividerCorto} />
                         </Grid>
@@ -167,21 +172,22 @@ export const Curriculum = () => {
                             <p>2016 - 2019</p>
                         </Grid>
                         <Grid sm={8} xs={12}>
-                            <h2 className="fs-2">Emprendimiento Personal: Blancos Line</h2>
+                            <h2 className="fs-2">{t('resume.blancos-line')}</h2>
                             <p className={`fs-1`}>
-                                Me encargaba de las compras, realizar las ventas en la vía pública, entregar los productos y cobrar mensualmente.
+                            {t('resume.blancos-line-desc')}
                             </p>
                             {/* <Divider className={classes.dividerCorto}/> */}
                         </Grid>
                     </Grid>
                     <Divider className={classes.divider} />
-                    <Typography variant="h4" color="initial" className={classes.marginTop}>Otros Conocimientos</Typography>
+                    <Typography variant="h4" color="initial" className={classes.marginTop}>{t('resume.knowledge')}</Typography>
                     <Grid container direction="row" alignItems="center" >
                         <Grid sm={12} xs={12} className={classes.p}>
-                            <p><u><b>Idioma Inglés.</b></u> Nivel: Intermedio-Avanzado</p>
-                            <p><u><b>Paquete Office.</b></u> Nivel: Avanzado. Word, Excel, PowerPoint</p>
-                            <p><u><b>Capacitación en Oratoria:</b></u> Realizado en el centro de formación profesional n°415.</p>
-                            <p><u><b>Certificación MercadoPago:</b></u> Certificación sobre cobros con Checkout Pro.</p>
+                            <p><u><b>{t('resume.english')}.</b></u> {t('resume.english-desc')}</p>
+                            <p><u><b>{t('resume.spanish')}.</b></u> {t('resume.spanish-desc')}</p>
+                            <p><u><b>{t('resume.microsoft-office')}.</b></u> {t('resume.microsoft-office-desc')}</p>
+                            <p><u><b>{t('resume.oratory')}:</b></u> {t('resume.oratory-desc')}</p>
+                            <p><u><b>{t('resume.mp')}:</b></u> {t('resume.mp-desc')}</p>
                         </Grid>
                     </Grid>
                     <Divider className={classes.divider} />
