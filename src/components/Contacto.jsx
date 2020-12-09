@@ -11,6 +11,8 @@ import MuiAlert from '@material-ui/lab/Alert';
 
 import  {useTranslation} from 'react-i18next';
 
+//imagenes
+import perfil from '../images/fer-campos.png';
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -72,7 +74,7 @@ export const Contacto = () => {
                     <Hidden xsDown>
                         <Avatar
                             alt="Foto Perfil"
-                            src={window.location.origin+"/images/fer-campos.png"}
+                            src={perfil}
                             className={classes.large}
                             variant="rounded"
                         />

@@ -5,16 +5,14 @@ import CardProyecto from './CardProyecto';
 import { Grid, Typography } from '@material-ui/core';
 import  {useTranslation} from 'react-i18next';
 
+import screenNotas  from '../images/proyectos/notas.png';
+import screenChat   from '../images/proyectos/chat.png';
+import screenTutti from '../images/proyectos/tuttifrutti.png'
+import screenCheckout from '../images/proyectos/checkout.png'
+import screenMaterias from '../images/proyectos/chat.png'
+import screenPortfolio from '../images/proyectos/tuttifrutti.png'
+
 const useStyles = makeStyles((theme) => ({
-    // root: {
-    //   display: 'flex',
-    //   flexWrap: 'wrap',
-    //   '& > *': {
-    //     margin: theme.spacing(1),
-    //     width: theme.spacing(16),
-    //     height: theme.spacing(16),
-    //   },
-    // },
     paper: {
         marginLeft: theme.spacing(2),
         marginRight: theme.spacing(2),
@@ -34,18 +32,16 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-
 export const Proyectos = () => {
     const classes = useStyles();
     const {t} = useTranslation();
-
     const html = [
         {
             titulo: t('projects.notes'),
             descripcion: t('projects.notes-desc'),
-            git: 'https://github.com/nicoAlvarezMern/calendar-app',
-            demo: 'https://nicolas-alvarez-mern-calendar.herokuapp.com/',
-            imagen: window.location.origin+'/images/proyectos/notas.png'
+            git: 'https://google.com',
+            demo: 'https://google.com',
+            imagen: screenNotas,
         },
     ]
     
@@ -53,24 +49,24 @@ export const Proyectos = () => {
         {
             titulo: t('projects.chat'),
             descripcion: t('projects.chat-desc'),
-            git: 'https://github.com/nicoAlvarezMern/calendar-app',
-            demo: 'https://nicolas-alvarez-mern-calendar.herokuapp.com/',
-            imagen: window.location.origin+'/images/proyectos/chat.png'
+            git: 'https://google.com',
+            demo: 'https://google.com',
+            imagen: screenChat,
         },
         {
             titulo: t('projects.tutti'),
             descripcion: t('projects.tutti-desc'),
-            git: 'https://github.com/nicoAlvarezMern/journal-app',
-            demo: 'https://tuttifrutti-fer.herokuapp.com/',
-            imagen: window.location.origin+'/images/proyectos/tuttifrutti.png'
+            git: 'https://google.com',
+            demo: 'https://google.com',
+            imagen: screenTutti,
         },
         {
             titulo: t('projects.mp'),
             descripcion: t('projects.mp-desc'),
-            git: 'https://github.com/nicoAlvarezMern/journal-app',
-            demo: 'https://nicolas-alvarez-mern-journal-app.netlify.app/',
-            imagen: window.location.origin+'/images/proyectos/checkout.png'
-    
+            git: 'https://google.com',
+            demo: 'https://google.com',
+            imagen: screenCheckout,
+            
         },
     ]
     
@@ -78,16 +74,17 @@ export const Proyectos = () => {
         {
             titulo: t('projects.subjects'),
             descripcion: t('projects.subjects-desc'),
-            git: 'https://github.com/nicoAlvarezMern/calendar-app',
-            demo: 'https://nicolas-alvarez-mern-calendar.herokuapp.com/',
-            imagen: window.location.origin+'/images/proyectos/chat.png'
+            git: 'https://google.com',
+            demo: 'https://google.com',
+            imagen: screenMaterias,
+            
         },
         {
             titulo: t('projects.portfolio'),
             descripcion: t('projects.portfolio-desc'),
-            git: 'https://github.com/nicoAlvarezMern/journal-app',
-            demo: 'https://tuttifrutti-fer.herokuapp.com/',
-            imagen: window.location.origin+'/images/proyectos/tuttifrutti.png'
+            git: 'https://google.com',
+            demo: 'https://google.com',
+            imagen: screenPortfolio,
         },
     
     ]

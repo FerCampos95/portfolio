@@ -2,6 +2,12 @@ import React from 'react'
 import { Grid, Avatar, makeStyles, Container, Typography } from '@material-ui/core'
 import { useTranslation } from 'react-i18next';
 
+//IMAGENES
+import fullstack from '../images/fullstack.jpg';
+import fullstackCielo from '../images/fullstackcielo.png';
+import linkedin from '../images/github.png';
+import github from '../images/linkedin.png';
+
 const useStyles = makeStyles((theme) => ({
     socialLinks: {
         display: 'flex',
@@ -16,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
     },
     resumeRightCol: {
         // backgroundImage: 'url(./images/fullstack.jpg)',
-        backgroundImage: 'url("../../images/fullstack.jpg")',
+        // backgroundImage: 'url("../../images/fullstack.jpg")',
+        backgroundImage: 'url('+fullstack+')',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         height: theme.spacing(82),
@@ -27,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '30px',
 
         [theme.breakpoints.down('sm')]: {
+            backgroundImage: 'url('+fullstackCielo+')',
             backgroundPosition: 'center',
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
@@ -72,7 +80,7 @@ export const Home = () => {
                 <a href="https://www.linkedin.com/in/fercampos/" rel="noopener noreferrer" target="_blank">
                     <Avatar
                         alt="LinkedIn Icono"
-                        src={window.location.origin + "/images/linkedin.png"}
+                        src={linkedin}
                         className={classes.icono1}
                         variant="rounded"
                     />
@@ -82,7 +90,7 @@ export const Home = () => {
                 <a href="https://github.com/fercampos95" rel="noopener noreferrer" target="_blank">
                     <Avatar
                         alt="Github Icono"
-                        src={window.location.origin + "/images/github.png"}
+                        src={github}
                         className={classes.icono1}
                         variant="rounded"
                     />

@@ -15,7 +15,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import { Button, Grid, Hidden, Switch } from '@material-ui/core';
+import { Button, Grid, Hidden} from '@material-ui/core';
 import { Link } from 'react-router-dom'
 
 import HomeIcon from '@material-ui/icons/Home';

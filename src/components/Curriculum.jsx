@@ -4,6 +4,8 @@ import Tecnologia from './Tecnologia';
 import Paper from '@material-ui/core/Paper';
 import  {useTranslation} from 'react-i18next';
 
+//imagenes
+import perfil from '../images/fer-campos.png';
 
 const useStyles = makeStyles((theme) => ({
     foto: {
@@ -59,7 +61,7 @@ export const Curriculum = () => {
                     <Grid container item xs={12} justify="center" direction="column" alignItems="center">
                         <Avatar
                             alt="Foto Perfil"
-                            src= {window.location.origin+"/images/fer-campos.png"}
+                            src= {perfil}
                             className={classes.foto}
                         />
                         <Typography variant="h3" className={classes.marginTopCenter}>

@@ -27,7 +27,7 @@ export function AppRouter() {
               <Route path="/proyectos" component={Proyectos} />
               {/* <Route path="/sobremi" component={AboutMe} />
               */}
-              <Redirect to='/inicio' />
+              {/* <Redirect to='/inicio' /> */}
           </Switch>
           <Footer></Footer>
     </BrowserRouter>
