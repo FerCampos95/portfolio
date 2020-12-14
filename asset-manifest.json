@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/portfolio/static/js/main.2d24b765.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.2d24b765.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.223ce307.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.223ce307.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.1e03bee3.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.1e03bee3.js.map",
     "static/js/2.fe46adcf.chunk.js": "/portfolio/static/js/2.fe46adcf.chunk.js",
     "static/js/2.fe46adcf.chunk.js.map": "/portfolio/static/js/2.fe46adcf.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.f6f479cc9e8208b16e1a5b1e75db6f45.js": "/portfolio/precache-manifest.f6f479cc9e8208b16e1a5b1e75db6f45.js",
+    "precache-manifest.4108fb3cb03fe78a1b6146af2777dc46.js": "/portfolio/precache-manifest.4108fb3cb03fe78a1b6146af2777dc46.js",
     "service-worker.js": "/portfolio/service-worker.js",
     "static/js/2.fe46adcf.chunk.js.LICENSE.txt": "/portfolio/static/js/2.fe46adcf.chunk.js.LICENSE.txt",
     "static/media/chat.png": "/portfolio/static/media/chat.3fb4f411.png",
@@ -21,6 +21,6 @@
   "entrypoints": [
     "static/js/runtime-main.1e03bee3.js",
     "static/js/2.fe46adcf.chunk.js",
-    "static/js/main.2d24b765.chunk.js"
+    "static/js/main.223ce307.chunk.js"
   ]
 }
