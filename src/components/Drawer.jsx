@@ -206,14 +206,14 @@ export default function PersistentDrawerLeft() {
                         </ListItemText>
                     </ListItemLink>
 
-                    <ListItemLink href={lang+"/sobre-mi"}>
+                    {/* <ListItemLink href={lang+"/sobre-mi"}>
                         <ListItemIcon>
                             <AccountBoxIcon />
                         </ListItemIcon>
                         <ListItemText>
                             {t('menu.about')}
                         </ListItemText>
-                    </ListItemLink>
+                    </ListItemLink> */}
 
                     <ListItemLink href={lang+"/contacto"}>
                         <ListItemIcon>

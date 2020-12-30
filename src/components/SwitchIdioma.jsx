@@ -74,7 +74,7 @@ export default function CustomizedSwitches() {
     return (
         // <FormGroup >
         //     <Typography component="div">
-                <Grid component="label" container alignItems="center" spacing={1}>
+                <Grid component="label" container justify="center" alignItems="center" spacing={1}>
                     <Grid item>Español</Grid>
                     <Grid item>
                         <AntSwitch checked={ingles} onChange={handleChange} name="checkedC" />
