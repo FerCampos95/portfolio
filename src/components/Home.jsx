@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 //IMAGENES
 import fullstack from '../images/fullstack.jpg';
-import fullstackCielo from '../images/fullstackcielo.png';
+import fullstackCielo from '../images/fullstackcielo2.png';
 import linkedin from '../images/github.png';
 import github from '../images/linkedin.png';
 
@@ -35,9 +35,10 @@ const useStyles = makeStyles((theme) => ({
 
         [theme.breakpoints.down('sm')]: {
             backgroundImage: 'url('+fullstackCielo+')',
-            backgroundPosition: 'center',
+            backgroundPosition: 'top',
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
+            backgroundColor: "beige",
             height: theme.spacing(65),
         },
     },

@@ -23,9 +23,12 @@ const useStyles = makeStyles((theme) => ({
         color: 'white',
         borderRadius: '30px',
     },
+    card: {
+        marginBottom: theme.spacing(3),
+    },
     cards: {
         display: 'flex',
-        margin: theme.spacing(3),
+        // margin: theme.spacing(3),
         justifyContent: 'space-around',
     },
 }));
@@ -44,7 +47,7 @@ export const Proyectos = () => {
             imagen: screenNotas,
         },
     ]
-    
+
     const node = [
         {
             titulo: t('projects.chat'),
@@ -54,8 +57,8 @@ export const Proyectos = () => {
             imagen: screenChat,
         },
         {
-            titulo: t('projects.tutti'),
-            descripcion: t('projects.tutti-desc'),
+            titulo: t('projects.whatsapp'),
+            descripcion: t('projects.whatsapp-desc'),
             git: 'https://google.com',
             demo: 'https://google.com',
             imagen: screenTutti,
@@ -66,19 +69,17 @@ export const Proyectos = () => {
             git: 'https://google.com',
             demo: 'https://google.com',
             imagen: screenCheckout,
-            
         },
     ]
-    
+
     const react = [
-        {
-            titulo: t('projects.subjects'),
-            descripcion: t('projects.subjects-desc'),
-            git: 'https://google.com',
-            demo: 'https://google.com',
-            imagen: screenMaterias,
-            
-        },
+        // {
+        //     titulo: t('projects.subjects'),
+        //     descripcion: t('projects.subjects-desc'),
+        //     git: 'https://google.com',
+        //     demo: 'https://google.com',
+        //     imagen: screenMaterias,
+        // },
         {
             titulo: t('projects.portfolio'),
             descripcion: t('projects.portfolio-desc'),
@@ -86,9 +87,15 @@ export const Proyectos = () => {
             demo: 'https://google.com',
             imagen: screenPortfolio,
         },
-    
+        {
+            titulo: t('projects.dailyapp'),
+            descripcion: t('projects.dailyapp-desc'),
+            git: 'https://google.com',
+            demo: 'https://google.com',
+            imagen: screenMaterias,
+        },
     ]
-    
+
     return (
         <Paper elevation={3} className={classes.paper}>
             <Grid container>
@@ -127,6 +134,7 @@ export const Proyectos = () => {
                                     descripcion={proyecto.descripcion}
                                     git={proyecto.git}
                                     demo={proyecto.demo}
+                                    className={classes.card}
                                 ></CardProyecto>
                             )
 

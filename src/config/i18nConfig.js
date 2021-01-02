@@ -71,6 +71,8 @@ We also migrated the wordpress website from the .com domain to the .net together
                         "oratory-desc": "Made in CFP nº415.",
                         "mp": "Mercado-Pago certification",
                         "mp-desc": "Certification on collections with Checkout-Pro.",
+                        "download":"Download Resume PDF",
+                        "resume-link": "https://drive.google.com/u/0/uc?id=1fqMUCJjHmZZzsCKRqSr1u7OSM0V-Of40&export=download"
                     },
                     "card": {
                         "demo": "Demo"
@@ -80,12 +82,14 @@ We also migrated the wordpress website from the .com domain to the .net together
                         "notes-desc": "My first web page with HTML-CSS, uses LocalStorage to store the Notes in Sheets.",
                         "chat": "Live Chat.",
                         "chat-desc": "Live chat created with Vanilla.js HTML / CSS using the Socket.io library.",
-                        "tutti": "TuttiFrutti Game.",
-                        "tutti-desc": "The TuttiFrutti game whit rooms created with Node.js HTML / CSS using the Socket.io library.",
+                        "whatsapp": "API Whatsapp-Web",
+                        "whatsapp-desc": "API that allows the use of WhatsApp through WhatsApp-Web.",
                         "mp": "MercadoPago Checkout.",
                         "mp-desc": "Integration of MercadoPago Checkout-Pro Service for 2020 Certification.",
                         "subjects": "My Subjects.",
                         "subjects-desc": "A WebApp to load the subjects and generate the possible courses to taken at the university, created with React and Material-UI.",
+                        "dailyapp": "Daily App (in construction).",
+                        "dailyapp-desc": "An Application to keep track of our projects, indicating our problems day by day and automatically generating the records of our days. With Authentication and Firebase Database.",
                         "portfolio": "PortFolio.",
                         "portfolio-desc": "My portfolio created with React and Material-UI with a fully responsive and installable design.",
                     }
@@ -142,6 +146,8 @@ Además migramos el sitio web de wordpress del dominio .com al .net en conjunto 
                         "oratory-desc": "Realizado en el centro de formación profesional n°415.",
                         "mp": "Certificación MercadoPago",
                         "mp-desc": "Certificación sobre cobros con Checkout Pro.",
+                        "download":"Descargar Curriculum PDF",
+                        "resume-link": "https://drive.google.com/u/0/uc?id=1U3n0i5tbzt0lzH-2LSFBI6SmFoFiMaus&export=download",
                     },
                     "card": {
                         "demo": "Demo"
@@ -151,12 +157,14 @@ Además migramos el sitio web de wordpress del dominio .com al .net en conjunto 
                         "notes-desc": "Mi primera página web con HTML/CSS, usa LocalStorage para almacenar las notas en hojas.",
                         "chat": "Chat en Vivo.",
                         "chat-desc": "Chat en vivo creado con Vanilla.js HTML/CSS usando la biblioteca Socket.io.",
-                        "tutti": "Juego del TuttiFrutti.",
-                        "tutti-desc": "El juego TuttiFrutti con salas creadas con Node.js HTML/CSS utilizando la biblioteca Socket.io.",
+                        "whatsapp": "API Whatsapp-Web",
+                        "whatsapp-desc": "API que permite la utilización de Whatsapp a través de Whatsapp-Web.",
                         "mp": "MercadoPago Checkout.",
                         "mp-desc": "Integración del Servicio MercadoPago Checkout-Pro para la Certificación 2020.",
                         "subjects": "Mis Materias.",
                         "subjects-desc": "Una WebApp para cargar las asignaturas y generar los posibles cursos a cursar en la universidad, creada con React y Material-UI.",
+                        "dailyapp": "Daily App (en construcción).",
+                        "dailyapp-desc": "Una Aplicación para llevar el control de nuestros proyectos, indicando día a día nuestros problemas y generando automaticamente los registros de nuestos días. Con autenticación y Base de datos Firebase.",
                         "portfolio": "PortFolio.",
                         "portfolio-desc": "Mi portafolio creado con React y Material-UI con un diseño totalmente responsive e instalable.",
                     }

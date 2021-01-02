@@ -1,11 +1,14 @@
-import { Grid, Avatar, makeStyles, Divider, Typography } from '@material-ui/core'
+import { Grid, Avatar, makeStyles, Divider, Typography, Button } from '@material-ui/core'
 import React from 'react';
 import Tecnologia from './Tecnologia';
 import Paper from '@material-ui/core/Paper';
-import  {useTranslation} from 'react-i18next';
+import { useTranslation } from 'react-i18next';
+import SaveIcon from '@material-ui/icons/Save';
+
 
 //imagenes
 import perfil from '../images/fer-campos.png';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     foto: {
@@ -15,9 +18,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: {
         marginTop: '10px',
     },
-    marginTopCenter:{
+    marginTopCenter: {
         marginTop: '10px',
-        textAlign: "center",        
+        textAlign: "center",
     },
     gridDerecho: {
         // background: '#27221F',
@@ -48,11 +51,14 @@ const useStyles = makeStyles((theme) => ({
     },
     p: {
         fontSize: theme.spacing(2),
+    },
+    descarga: {
+        marginTop: theme.spacing(2),
     }
 }));
 
 export const Curriculum = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const classes = useStyles();
     return (
         <Paper className={classes.paper} elevation={5}>
@@ -61,7 +67,7 @@ export const Curriculum = () => {
                     <Grid container item xs={12} justify="center" direction="column" alignItems="center">
                         <Avatar
                             alt="Foto Perfil"
-                            src= {perfil}
+                            src={perfil}
                             className={classes.foto}
                         />
                         <Typography variant="h3" className={classes.marginTopCenter}>
@@ -82,14 +88,14 @@ export const Curriculum = () => {
                             {t('resume.profile')}
                         </p>
                         <Divider className={classes.divider} />
-                        <Typography variant="h6" className={classes.marginTop}>
+                        <Typography variant="h6" className={classes.marginTopCenter}>
                             {t('resume.location')}
                         </Typography>
-                        <p>González Catán, La Matanza, Bs As, Argentina.</p>
+                        <p style={{ textAlign: "center" }}>González Catán, La Matanza, Bs As, Argentina.</p>
                         <Typography variant="h6" className={classes.marginTop}>
                             {t('resume.contact')}
                         </Typography>
-                            <p><b>{t('resume.phone')}:</b> +54 11-6707-0753<br></br>
+                        <p><b>{t('resume.phone')}:</b> +54 11-6707-0753<br></br>
                             <b>{t('resume.email')}:</b> fer_eze_jose@hotmail.com</p>
                         <Divider className={classes.divider} />
                     </Grid>
@@ -104,11 +110,11 @@ export const Curriculum = () => {
                             {t('resume.tecnologies')}
                         </Typography>
                         <Tecnologia nombre={"Javascript"} nivel={94}></Tecnologia>
-                        <Tecnologia nombre={"Java"} nivel={75}></Tecnologia>
+                        <Tecnologia nombre={"Java"} nivel={60}></Tecnologia>
                         <Tecnologia nombre={"C"} nivel={80}></Tecnologia>
-                        <Tecnologia nombre={"HTML/CSS"} nivel={60}></Tecnologia>
-                        <Tecnologia nombre={"React"} nivel={82}></Tecnologia>
-                        <Tecnologia nombre={"Node"} nivel={68}></Tecnologia>
+                        <Tecnologia nombre={"HTML/CSS"} nivel={75}></Tecnologia>
+                        <Tecnologia nombre={"React"} nivel={70}></Tecnologia>
+                        <Tecnologia nombre={"Node"} nivel={70}></Tecnologia>
                         <Tecnologia nombre={"Mongo"} nivel={35}></Tecnologia>
                         <Tecnologia nombre={"SQL"} nivel={35}></Tecnologia>
                         <Tecnologia nombre={"Docker"} nivel={66}></Tecnologia>
@@ -166,7 +172,7 @@ export const Curriculum = () => {
                         <Grid sm={8} xs={12}>
                             <h2 className="fs-2">{t('resume.el-progreso')}</h2>
                             <p className={`fs-1`}>
-                            {t('resume.el-progreso-desc')}
+                                {t('resume.el-progreso-desc')}
                             </p>
                             <Divider className={classes.dividerCorto} />
                         </Grid>
@@ -176,7 +182,7 @@ export const Curriculum = () => {
                         <Grid sm={8} xs={12}>
                             <h2 className="fs-2">{t('resume.blancos-line')}</h2>
                             <p className={`fs-1`}>
-                            {t('resume.blancos-line-desc')}
+                                {t('resume.blancos-line-desc')}
                             </p>
                             {/* <Divider className={classes.dividerCorto}/> */}
                         </Grid>
@@ -193,6 +199,13 @@ export const Curriculum = () => {
                         </Grid>
                     </Grid>
                     <Divider className={classes.divider} />
+                </Grid>
+                <Grid item container justify="center" className={classes.descarga}>
+                    <a style={{ textDecoration: "none" }} href={t('resume.resume-link')} download="CV.pdf">
+                        <Button variant="contained" color="primary">
+                            {t('resume.download')}
+                        </Button>
+                    </a>
                 </Grid>
             </Grid>
         </Paper>

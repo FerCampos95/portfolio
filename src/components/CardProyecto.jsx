@@ -10,15 +10,17 @@ import Typography from '@material-ui/core/Typography';
 import  {useTranslation} from 'react-i18next';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 345,
+        marginTop: theme.spacing(2),
+        marginBottom: theme.spacing(2),
     },
     links: {
         display: 'flex',
         justifyContent: 'space-around',
     },
-});
+}));
 
 
 export default function ImgMediaCard({ imagen, titulo, descripcion, git, demo }) {
