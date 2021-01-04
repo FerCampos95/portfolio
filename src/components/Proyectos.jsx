@@ -10,7 +10,9 @@ import screenChat   from '../images/proyectos/chat.png';
 import screenTutti from '../images/proyectos/tuttifrutti.png'
 import screenCheckout from '../images/proyectos/checkout.png'
 import screenMaterias from '../images/proyectos/chat.png'
-import screenPortfolio from '../images/proyectos/tuttifrutti.png'
+import screenAPIWhatsapp from '../images/proyectos/api-whatsapp.png'
+import screenPortfolio from '../images/proyectos/portfolio.png'
+import enConstruccion from '../images/proyectos/construccion.png'
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -42,8 +44,8 @@ export const Proyectos = () => {
         {
             titulo: t('projects.notes'),
             descripcion: t('projects.notes-desc'),
-            git: 'https://google.com',
-            demo: 'https://google.com',
+            git: 'https://github.com/FerCampos95/notas',
+            demo: 'https://fercampos95.github.io/notas',
             imagen: screenNotas,
         },
     ]
@@ -52,22 +54,22 @@ export const Proyectos = () => {
         {
             titulo: t('projects.chat'),
             descripcion: t('projects.chat-desc'),
-            git: 'https://google.com',
-            demo: 'https://google.com',
+            git: 'https://github.com/FerCampos95/chat-socketio',
+            demo: 'https://chat-socketio-fer.herokuapp.com',
             imagen: screenChat,
         },
         {
             titulo: t('projects.whatsapp'),
             descripcion: t('projects.whatsapp-desc'),
-            git: 'https://google.com',
-            demo: 'https://google.com',
-            imagen: screenTutti,
+            git: 'https://github.com/FerCampos95/API-Whatsapp',
+            demo: 'https://api-whatsapp-fer.herokuapp.com/api-docs/',
+            imagen: screenAPIWhatsapp,
         },
         {
             titulo: t('projects.mp'),
             descripcion: t('projects.mp-desc'),
-            git: 'https://google.com',
-            demo: 'https://google.com',
+            git: 'https://github.com/FerCampos95/mp-ecommerce-nodejs',
+            demo: 'https://fercampos-mp-ecommerce-nodejs.herokuapp.com/',
             imagen: screenCheckout,
         },
     ]
@@ -83,16 +85,16 @@ export const Proyectos = () => {
         {
             titulo: t('projects.portfolio'),
             descripcion: t('projects.portfolio-desc'),
-            git: 'https://google.com',
-            demo: 'https://google.com',
+            git: 'https://github.com/FerCampos95/portfolio',
+            demo: 'https://fer-portfolio.herokuapp.com/',
             imagen: screenPortfolio,
         },
         {
             titulo: t('projects.dailyapp'),
             descripcion: t('projects.dailyapp-desc'),
-            git: 'https://google.com',
-            demo: 'https://google.com',
-            imagen: screenMaterias,
+            git: '#',
+            demo: '#',
+            imagen: enConstruccion,
         },
     ]
 
