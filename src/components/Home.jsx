@@ -4,58 +4,78 @@ import { useTranslation } from 'react-i18next';
 
 //IMAGENES
 import fullstack from '../images/fullstack.jpg';
-import fullstackCielo from '../images/fullstackcielo2.png';
+import fullstackCielo from '../images/fullstackcielo.png';
 import linkedin from '../images/github.png';
 import github from '../images/linkedin.png';
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        backgroundColor: "#ABE9F4",
+    },
     socialLinks: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'spaceBetween',
-        width: '100%',
-        margin: 'auto'
+        justifyContent: 'center',
+        alignItems: "center",
+        margin: 'auto',
+        marginTop: theme.spacing(3),
+
+        [theme.breakpoints.down('sm')]: {
+            margin:"auto",
+            //marginTop: "10px", //no funciono
+            marginBottom: "-7px",
+        },
+    },
+    links : {
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 10,
+        },
     },
     large: {
         width: theme.spacing(155),
         height: theme.spacing(40),
     },
     resumeRightCol: {
-        // backgroundImage: 'url(./images/fullstack.jpg)',
-        // backgroundImage: 'url("../../images/fullstack.jpg")',
-        backgroundImage: 'url('+fullstack+')',
+        backgroundImage: 'url(' + fullstack + ')',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
-        height: theme.spacing(82),
-
+        height: theme.spacing(110),
+        display: "flex",
+        flexDirection: "column",
+        alignItems:"top",
         color: 'black',
         padding: '1em',
-        marginBottom: '20px',
         borderRadius: '30px',
 
         [theme.breakpoints.down('sm')]: {
-            backgroundImage: 'url('+fullstackCielo+')',
-            backgroundPosition: 'top',
+            backgroundImage: 'url(' + fullstackCielo + ')',
+            //backgroundPosition: 'bottom',
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
-            backgroundColor: "beige",
-            height: theme.spacing(65),
+            backgroundColor: "#ABE9F4",
+            height: theme.spacing(63),
         },
     },
     icono1: {
-        marginTop: theme.spacing(3),
+        marginRight: theme.spacing(10),
+        marginLeft: theme.spacing(10),
         width: theme.spacing(18),
         height: theme.spacing(18),
-    },
-    centrado: {
-        textAlign: 'center',
+        justifyContent: "center",
+
+        [theme.breakpoints.down('sm')]: {
+            marginRight: theme.spacing(1),
+            marginLeft: theme.spacing(1),
+            width: theme.spacing(8),
+            height: theme.spacing(8),
+        },
     },
     job: {
         textAlign: 'center',
         [theme.breakpoints.down('sm')]: {
             fontSize: "3.6em"
         },
-    }
+    },
 }));
 
 export const Home = () => {
@@ -63,41 +83,52 @@ export const Home = () => {
     const { t } = useTranslation();
 
     return (
-        <Container className="animate__animated animate__fadeIn">
-            <Grid container justify="center" className={classes.resumeRightCol}>
-                <Grid container item xs={12} justify="center">
+        <Container className={classes.root}>
+            <Grid justify="center" className={classes.resumeRightCol}>
+                <Grid container item xs={12} justify="center" alignContent="flex-start">
                     <Typography variant="h2" className={classes.job}>
                         <b>{t('job')}</b>
                     </Typography>
+
+                    <Grid item xs={12} justify="center">
+                        <Typography variant="h5" align="center">
+                            <b>HTML/CSS | Bootstrap | Material-ui | JavaScript | React | NodeJS | Express | MongoDB | Azure | Docker</b>
+                        </Typography>
+                    </Grid>
                 </Grid>
-                <Grid container item xs={12} justify="center" alignItems="flex-end">
-                    <Typography variant="h5" className={classes.centrado}>
-                        <b>HTML/CSS | Bootstrap | Material-ui | JavaScript | React | NodeJS | Express | MongoDB | Azure | Docker</b>
-                    </Typography>
+
+                <Grid item className={classes.socialLinks} >
+                    <a href="https://www.linkedin.com/in/fercampos/" rel="noopener noreferrer" target="_blank">
+                        <Avatar
+                            alt="LinkedIn Icono"
+                            src={linkedin}
+                            className={classes.icono1}
+                            variant="rounded"
+                        />
+                        <Typography 
+                            variant="h6" 
+                            align="center"
+                            className={classes.links}
+                        >/FerCampos</Typography>
+                    </a>
+
+                    <a href="https://github.com/fercampos95" rel="noopener noreferrer" target="_blank">
+                        <Avatar
+                            alt="Github Icono"
+                            src={github}
+                            className={classes.icono1}
+                            variant="rounded"
+                        />
+                        <Typography 
+                            variant="h6" 
+                            align="center"
+                            className={classes.links}
+                        >/FerCampos95</Typography>
+                    </a>
                 </Grid>
+
             </Grid>
 
-            <Grid container item className={classes.socialLinks} justify="space-evenly" >
-                <a href="https://www.linkedin.com/in/fercampos/" rel="noopener noreferrer" target="_blank">
-                    <Avatar
-                        alt="LinkedIn Icono"
-                        src={linkedin}
-                        className={classes.icono1}
-                        variant="rounded"
-                    />
-                    <Typography variant="h6">/FerCampos</Typography>
-                </a>
-
-                <a href="https://github.com/fercampos95" rel="noopener noreferrer" target="_blank">
-                    <Avatar
-                        alt="Github Icono"
-                        src={github}
-                        className={classes.icono1}
-                        variant="rounded"
-                    />
-                    <Typography variant="h6">/FerCampos95</Typography>
-                </a>
-            </Grid>
 
             {/* <Grid container item className={classes.socialLinks} justify="space-evenly" >
                 <a href="https://www.linkedin.com/in/fercampos/" rel="noopener noreferrer" target="_blank">

@@ -15,14 +15,20 @@ const AntSwitch = withStyles((theme) => ({
     },
     switchBase: {
         padding: 2,
-        color: theme.palette.grey[500],
+//        color: theme.palette.grey[500],
+        color: theme.palette.common.white,
+        backgroundColor: theme.palette.primary.main,
+        opacity: 1,
+
+
         '&$checked': {
             transform: 'translateX(12px)',
             color: theme.palette.common.white,
             '& + $track': {
                 opacity: 1,
                 backgroundColor: theme.palette.primary.main,
-                borderColor: theme.palette.primary.main,
+                border: `1px solid ${theme.palette.grey[500]}`,
+
             },
         },
     },
@@ -35,7 +41,8 @@ const AntSwitch = withStyles((theme) => ({
         border: `1px solid ${theme.palette.grey[500]}`,
         borderRadius: 16 / 2,
         opacity: 1,
-        backgroundColor: theme.palette.common.white,
+        //backgroundColor: theme.palette.common.white,
+        backgroundColor: theme.palette.primary.main,
     },
     checked: {},
 }))(Switch);
@@ -64,24 +71,20 @@ export default function CustomizedSwitches() {
         setIngles(event.target.checked);
         if (event.target.checked) {
             localStorage.setItem("lang", "en");
-            window.location.href= window.location.href.replace('/es','/en')
+            window.location.href = window.location.href.replace('/es', '/en')
         } else {
             localStorage.setItem("lang", "es");
-            window.location.href= window.location.href.replace('/en','/es')
+            window.location.href = window.location.href.replace('/en', '/es')
         }
     };
 
     return (
-        // <FormGroup >
-        //     <Typography component="div">
-                <Grid component="label" container justify="center" alignItems="center" spacing={1}>
-                    <Grid item>Español</Grid>
-                    <Grid item>
-                        <AntSwitch checked={ingles} onChange={handleChange} name="checkedC" />
-                    </Grid>
-                    <Grid item>Inglés</Grid>
-                </Grid>
-        //    </Typography>
-        // </FormGroup> 
+        <Grid component="label" container justify="center" alignItems="center" spacing={1}>
+            <Grid item>Español</Grid>
+            <Grid item>
+                <AntSwitch checked={ingles} onChange={handleChange} name="checkedC" />
+            </Grid>
+            <Grid item>English</Grid>
+        </Grid>
     );
 }

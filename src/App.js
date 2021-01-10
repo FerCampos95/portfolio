@@ -3,7 +3,7 @@ import { AppRouter } from './router/AppRouter';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor: "#ABE9F4"}}>
       <AppRouter></AppRouter>
     </div>
   );

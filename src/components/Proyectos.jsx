@@ -92,8 +92,8 @@ export const Proyectos = () => {
         {
             titulo: t('projects.dailyapp'),
             descripcion: t('projects.dailyapp-desc'),
-            git: '#',
-            demo: '#',
+            git: '',
+            demo: '',
             imagen: enConstruccion,
         },
     ]

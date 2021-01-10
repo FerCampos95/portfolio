@@ -15,7 +15,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import { Button, Grid, Hidden} from '@material-ui/core';
+import { Button, Grid, Hidden } from '@material-ui/core';
 import { Link } from 'react-router-dom'
 
 import HomeIcon from '@material-ui/icons/Home';
@@ -23,7 +23,7 @@ import AppsIcon from '@material-ui/icons/Apps';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
-import  {useTranslation} from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import SwitchIdioma from './SwitchIdioma';
 
@@ -32,6 +32,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
+        backgroundColor: "#ABE9F4",
     },
     appBar: {
         transition: theme.transitions.create(['margin', 'width'], {
@@ -84,6 +85,11 @@ const useStyles = makeStyles((theme) => ({
         }),
         marginLeft: 0,
     },
+    divider : {
+        width: "3px",
+        marginRight: theme.spacing(1),
+        marginLeft: theme.spacing(1),
+    }
 }));
 
 function ListItemLink(props) {
@@ -91,11 +97,11 @@ function ListItemLink(props) {
 }
 
 export default function PersistentDrawerLeft() {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
-    let lang= "/"+localStorage.getItem("lang") || "";
+    let lang = "/" + localStorage.getItem("lang") || "";
 
 
     const handleDrawerOpen = () => {
@@ -133,12 +139,14 @@ export default function PersistentDrawerLeft() {
                             color="inherit"
                         >
                             <Typography variant="h6">
-                                Fernando Campos
+                                {t('menu.home')}
                             </Typography>
                         </Link>
                     </Grid>
+
                     <Hidden smDown>
-                        <Grid container justify="flex-end" >
+
+                        <Grid container justify="flex-end" alignItems="center">
                             <Link to="/curriculum"
                                 component={Button}
                                 color="inherit"
@@ -158,6 +166,12 @@ export default function PersistentDrawerLeft() {
                             >
                                 {t('menu.contact')}
                             </Link>
+                            
+                            <Divider orientation="vertical" flexItem className={classes.divider}/>
+
+                            <Grid item>
+                                <SwitchIdioma/>
+                            </Grid>
                         </Grid>
                     </Hidden>
 
@@ -165,7 +179,6 @@ export default function PersistentDrawerLeft() {
             </AppBar>
             <Drawer
                 className={classes.drawer}
-                variant="persistent"
                 anchor="left"
                 open={open}
                 classes={{
@@ -179,7 +192,7 @@ export default function PersistentDrawerLeft() {
                 </div>
                 <Divider />
                 <List>
-                    <ListItemLink href={lang+"/inicio"}>
+                    <ListItemLink href={lang + "/inicio"}>
                         <ListItemIcon>
                             <HomeIcon />
                         </ListItemIcon>
@@ -188,7 +201,7 @@ export default function PersistentDrawerLeft() {
                         </ListItemText>
                     </ListItemLink>
 
-                    <ListItemLink href={lang+"/proyectos"}>
+                    <ListItemLink href={lang + "/proyectos"}>
                         <ListItemIcon>
                             <AppsIcon />
                         </ListItemIcon>
@@ -197,7 +210,7 @@ export default function PersistentDrawerLeft() {
                         </ListItemText>
                     </ListItemLink>
 
-                    <ListItemLink href={lang+"/curriculum"}>
+                    <ListItemLink href={lang + "/curriculum"}>
                         <ListItemIcon>
                             <MenuBookIcon />
                         </ListItemIcon>
@@ -215,7 +228,7 @@ export default function PersistentDrawerLeft() {
                         </ListItemText>
                     </ListItemLink> */}
 
-                    <ListItemLink href={lang+"/contacto"}>
+                    <ListItemLink href={lang + "/contacto"}>
                         <ListItemIcon>
                             <ContactMailIcon />
                         </ListItemIcon>
@@ -227,7 +240,7 @@ export default function PersistentDrawerLeft() {
                 <Divider />
                 <List >
                     <ListItem >
-                        <SwitchIdioma/>
+                        <SwitchIdioma />
                     </ListItem>
                 </List>
             </Drawer>
