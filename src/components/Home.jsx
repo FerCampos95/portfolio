@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             margin:"auto",
             //marginTop: "10px", //no funciono
-            marginBottom: "-7px",
+            marginBottom: "-12px",
         },
     },
     links : {
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
             backgroundColor: "#ABE9F4",
-            height: theme.spacing(63),
+            height: theme.spacing(55),
         },
     },
     icono1: {
@@ -76,6 +76,14 @@ const useStyles = makeStyles((theme) => ({
             fontSize: "3.6em"
         },
     },
+    conocimientos: {
+        textAlign: 'center',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "1.2em",
+            //marginTop: theme.spacing(4),
+
+        },
+    },
 }));
 
 export const Home = () => {
@@ -91,7 +99,7 @@ export const Home = () => {
                     </Typography>
 
                     <Grid item xs={12} justify="center">
-                        <Typography variant="h5" align="center">
+                        <Typography variant="h5" className={classes.conocimientos}>
                             <b>HTML/CSS | Bootstrap | Material-ui | JavaScript | React | NodeJS | Express | MongoDB | Azure | Docker</b>
                         </Typography>
                     </Grid>
